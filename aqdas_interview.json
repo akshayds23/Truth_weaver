@@ -1,0 +1,58 @@
+{
+  "shadow_id": "_audio_sog_interview",
+  "revealed_truth": {
+    "programming_experience": "Fundamentals, Backend, Middleware, Full Stack, Enterprise systems, Data team, Infrastructure team, Integrations, Software engineer, New developer",
+    "programming_language": "unknown",
+    "skill_mastery": "Fundamentals, Problem-solving, Solution architecture, System understanding, Collaboration, Backend, Middleware, Full Stack",
+    "leadership_claims": "Innovation COE, Tool evaluation, Strategic analysis, Pilot programs, Process improvement, ROI measurement, Proactive AI adoption, Leader",
+    "team_experience": "Innovation COE, Collaborative analysis, Cross-functional teams, Data team, Infrastructure team, Diverse teams, Project management",
+    "skills and other keywords": [
+      "AI evaluation",
+      "AI tools",
+      "AI adoption",
+      "AI ROI",
+      "Tool analysis",
+      "Tool selection",
+      "Innovation",
+      "COE",
+      "Product backlog",
+      "User stories",
+      "DRIs",
+      "Architecture diagrams",
+      "Problem-solving",
+      "Solution design",
+      "Fundamentals",
+      "Backend",
+      "Middleware",
+      "Full stack",
+      "Data team",
+      "Infrastructure team",
+      "Integrations",
+      "Mentoring",
+      "Time-saving",
+      "Efficiency",
+      "Quantifying success",
+      "Metrics",
+      "Tracking",
+      "Agile"
+    ]
+  },
+  "deception_patterns": [
+    {
+      "lie_type": "Understatement / Evasion of Current Impact",
+      "contradictory_claims": [
+        "AI knowledge is not our core requirement for hiring, still looking for strong backend/middleware/full stack.",
+        "I do that [use ChatGPT]... it's helping or saving time for you.",
+        "we have introduced a couple of more labels... whenever you are using AI... how much it helps you (actively tracking AI's time-saving impact on teams).",
+        "in future, it will be changed definitely because these tools are evolving very fast (acknowledging future core requirement)."
+      ]
+    },
+    {
+      "lie_type": "Overemphasis on Human Irreplaceability vs. Rapid AI Evolution",
+      "contradictory_claims": [
+        "AI tools are not net interpreters, maybe I think 1% for person in some cases 50% but not beyond that, but changing very fast, I think in two years, six months, maybe six months or two years would be maybe a fan, it will change the entire story (acknowledges rapid, transformative evolution of AI capabilities in near future).",
+        "even if let's say there is a tool which is 100% accurate, still I would say, go, put your hardware... understand the fundamentals... if you don't know, tools will generate a number of lines for you, and you understand what is in, you won't be able to... advise... solution of the problems (argues human fundamentals are irreplaceable for problem-solving and advising, even with perfect AI, implying a permanent ceiling on AI's autonomous problem-solving)."
+      ]
+    }
+  ]
+}
