@@ -1,0 +1,350 @@
+[
+  {
+    "shadow_id": "atlas_2025_1",
+    "revealed_truth": {
+      "programming_experience": "internship, summer internship, ran scripts",
+      "programming_language": "Calico",
+      "skill_mastery": "deploying YAML files, running scripts, basic troubleshooting",
+      "leadership_claims": "unknown",
+      "team_experience": "watched senior engineers work, ran scripts, deployed YAML files",
+      "skills and other keywords": [
+        "Kubernetes",
+        "managing production clusters",
+        "networking",
+        "security posture",
+        "network policy",
+        "check logs",
+        "core DNS log",
+        "restart pod",
+        "deploy YAML files",
+        "ran scripts"
+      ]
+    },
+    "deception_patterns": [
+      {
+        "lie_type": "Exaggeration of Experience/Role",
+        "contradictory_claims": [
+          "I'm a seasoned DevOps engineer.",
+          "For the past year, I've been in the trenches, managing our production clusters, personally responsible for our entire networking and security posture.",
+          "Okay, it was an internship, it was a summer internship, and I mostly just watched senior engineers work.",
+          "I'm not a DevOps engineer, I just want to be one.",
+          "The senior engineer usually handles the network debugging. I just deploy the YAML files he gives me."
+        ]
+      },
+      {
+        "lie_type": "False Claim of Responsibility/Ownership",
+        "contradictory_claims": [
+          "personally responsible for our entire networking and security posture.",
+          "I wrote all our policies from scratch to ensure total service isolation.",
+          "The senior engineer usually handles the network debugging.",
+          "I just deploy the YAML files he gives me.",
+          "I ran some scripts they gave me."
+        ]
+      },
+      {
+        "lie_type": "Lack of Technical Depth",
+        "contradictory_claims": [
+          "I'm a seasoned DevOps engineer, specializing in Kubernetes.",
+          "personally responsible for our entire networking and security posture.",
+          "I check the logs, then maybe the core DNS log. I'd probably just restart pod that usually fizzings."
+        ]
+      }
+    ]
+  },
+  {
+    "shadow_id": "crius_2025_5",
+    "revealed_truth": {
+      "programming_experience": "developer",
+      "programming_language": "unknown",
+      "skill_mastery": "coupon code component",
+      "leadership_claims": "not lead engineer",
+      "team_experience": "e-commerce team",
+      "skills and other keywords": [
+        "developer",
+        "e-commerce",
+        "coupon code component"
+      ]
+    },
+    "deception_patterns": [
+      {
+        "lie_type": "Role Misrepresentation",
+        "contradictory_claims": [
+          "lead engineer",
+          "developer",
+          "small coupon code component"
+        ]
+      }
+    ]
+  },
+  {
+    "shadow_id": "eos_2023_1",
+    "revealed_truth": {
+      "programming_experience": "8 years",
+      "programming_language": "CWAR",
+      "skill_mastery": "backend development, clean code, scalable systems, maintainable systems, problem-solving, debugging, race condition resolution, component architecture, data ingestion, system design, database selection, cost justification, service level design",
+      "leadership_claims": "principal engineer, component architect",
+      "team_experience": "collaborated on larger architecture, justified engineering effort for team",
+      "skills and other keywords": [
+        "principal engineer",
+        "backend",
+        "clean code",
+        "scalable",
+        "maintainable",
+        "complex business problem",
+        "elegant code",
+        "race condition",
+        "caching layer",
+        "heavy load",
+        "instrumenting code",
+        "debugging",
+        "problem-solving",
+        "architect",
+        "data ingestion service",
+        "component architecture",
+        "team lead",
+        "Cosmos DB",
+        "geo-replication",
+        "design document",
+        "cost justification",
+        "engineering effort",
+        "trade-offs",
+        "service design",
+        "service level design",
+        "lead architect (aspiration)",
+        "designing seams between services"
+      ]
+    },
+    "deception_patterns": [
+      {
+        "lie_type": "Exaggeration / Misrepresentation of Scope",
+        "contradictory_claims": [
+          "architect of the entire solution",
+          "architect-sific component, the data ingestion service, within a larger archer designed by our team lead"
+        ]
+      }
+    ]
+  },
+  {
+    "shadow_id": "hyperion_2022_1",
+    "revealed_truth": {
+      "programming_experience": "backend development, database migration, Celery reliability, business logic implementation, lead developer role",
+      "programming_language": "Python, Django",
+      "skill_mastery": "backend, Django, Celery, database migration, business logic, coding, Celery reliability",
+      "leadership_claims": "lead developer",
+      "team_experience": "working with lead dev, working with architect, team collaboration",
+      "skills and other keywords": [
+        "backend",
+        "jango model",
+        "celery pass",
+        "database migration",
+        "celery",
+        "background job processing",
+        "transaction decorator",
+        "business logic",
+        "infrastructure shell",
+        "core architecture",
+        "database SEMA",
+        "code",
+        "system"
+      ]
+    },
+    "deception_patterns": [
+      {
+        "lie_type": "False Claim of Sole Authorship",
+        "contradictory_claims": [
+          "I built my back end from the very first line of every jango model, every celery pass, every database migration. That was all me.",
+          "The lead dev actually wrote a library for that. I just used his transaction decorator.",
+          "he designed the core architecture and the database SEMA, I wrote code for it. I was the lead developer, not the architect. It was my code, but it was his system."
+        ]
+      },
+      {
+        "lie_type": "Exaggeration of Personal Contribution",
+        "contradictory_claims": [
+          "I wrote all the business logic. He just provided some infrastructure shell. It was my implementation.",
+          "he designed the core architecture and the database SEMA, I wrote code for it. I was the lead developer, not the architect. It was my code, but it was his system."
+        ]
+      }
+    ]
+  },
+  {
+    "shadow_id": "oceanus_2022_1",
+    "revealed_truth": {
+      "programming_experience": "over a decade",
+      "programming_language": "C++",
+      "skill_mastery": "low latent trading, nanosecond response time, custom memory allocators, kernel bypass networking, CPU cache behavior, performance optimization, design philosophy, data-driven complexity management",
+      "leadership_claims": "manager, manager of six, team shielding, team empowerment, politics handling, mutual trust",
+      "team_experience": "build software, memory optimization, clock cycle optimization, team management, team empowerment, politics handling, mutual trust, rapid prototyping, relentless measurement, data-driven complexity addition",
+      "skills and other keywords": [
+        "C++ developer",
+        "manager",
+        "low latent trading",
+        "nanosecond response time",
+        "Performance",
+        "custom memory allocators",
+        "kernel bypass networking",
+        "CPU cache behavior",
+        "memory optimization",
+        "clock cycle optimization",
+        "team empowerment",
+        "conflict resolution",
+        "trust",
+        "politics handling",
+        "design philosophy",
+        "prototyping",
+        "measurement",
+        "data-driven development",
+        "complexity management",
+        "network jitter",
+        "cloud environment",
+        "technical challenges",
+        "problem-solving"
+      ]
+    },
+    "deception_patterns": []
+  },
+  {
+    "shadow_id": "rhea_2024_1",
+    "revealed_truth": {
+      "programming_experience": "distributed systems, asynchronous Java services, 6 years, re-architected consumer logic, dead letter queue, idempotency enforcement, service mesh, client-side library approach",
+      "programming_language": "Java",
+      "skill_mastery": "elegance, resilience, problem-solving, re-architecture, idempotency implementation, graceful recovery, mentorship, critical thinking, trade-off analysis, curiosity",
+      "leadership_claims": "tech lead, mentorship, developing junior engineers, team development",
+      "team_experience": "team problem-solving, team re-architecture, team development",
+      "skills and other keywords": [
+        "Kafka",
+        "payment system",
+        "passion for problem-solving",
+        "idempotency",
+        "microservices pattern",
+        "cloud migration",
+        "tech blog research",
+        "service discovery"
+      ]
+    },
+    "deception_patterns": []
+  },
+  {
+    "shadow_id": "selene_2024_1",
+    "revealed_truth": {
+      "programming_experience": "seasoned",
+      "programming_language": "Ruby on Rails",
+      "skill_mastery": "basic",
+      "leadership_claims": "big picture",
+      "team_experience": "work with a data scientist",
+      "skills and other keywords": [
+        "Ruby on Rails",
+        "data",
+        "modern data stack",
+        "AI",
+        "machine learning",
+        "big data",
+        "predictive engine",
+        "modeling",
+        "classification",
+        "regression",
+        "deploying models",
+        "TensorFlow",
+        "PyTorch",
+        "ETL",
+        "inference",
+        "pipeline",
+        "class imbalance",
+        "over sampling",
+        "smoke",
+        "evaluation metric",
+        "Rails integration",
+        "weekend workshop"
+      ]
+    },
+    "deception_patterns": [
+      {
+        "lie_type": "Exaggeration of Data Science Proficiency",
+        "contradictory_claims": [
+          "I'm proficient across the modern data stack, AI, machine learning, and big data.",
+          "I'm comfortable deploying models using frameworks like TensorFlow or PyTorch.",
+          "The entire pipeline from ETL to inference is in my wheelhouse.",
+          "no, not off the top of my head."
+        ]
+      },
+      {
+        "lie_type": "False Claims of Data Science Expertise",
+        "contradictory_claims": [
+          "I'm proficient across the modern data stack, AI, machine learning, and big data.",
+          "I'm comfortable deploying models using frameworks like TensorFlow or PyTorch.",
+          "The entire pipeline from ETL to inference is in my wheelhouse.",
+          "I only took a weekend workshop on this stuff. I don't know any of it."
+        ]
+      }
+    ]
+  },
+  {
+    "shadow_id": "titan_2023_1",
+    "revealed_truth": {
+      "programming_experience": "2 years",
+      "programming_language": "React",
+      "skill_mastery": "junior dev",
+      "leadership_claims": "unknown",
+      "team_experience": "unknown",
+      "skills and other keywords": [
+        "React",
+        "custom hook",
+        "boilerplate",
+        "IDE",
+        "junior dev"
+      ]
+    },
+    "deception_patterns": [
+      {
+        "lie_type": "Exaggerated Experience/Role",
+        "contradictory_claims": [
+          "seven years",
+          "Lead Architect",
+          "visionary",
+          "architect systems",
+          "two years",
+          "not an architect"
+        ]
+      },
+      {
+        "lie_type": "Misrepresentation of Skill Mastery",
+        "contradictory_claims": [
+          "designed and built microfront and platform from scratch",
+          "made right decisions",
+          "React for scalability",
+          "custom hook pointless",
+          "IDE writes boilerplate",
+          "grunt work",
+          "junior dev"
+        ]
+      }
+    ]
+  },
+  {
+    "shadow_id": "buried_confession",
+    "revealed_truth": {
+      "programming_experience": "copied patterns, reused scripts, assembled modules, stitching",
+      "programming_language": "unknown",
+      "skill_mastery": "copied patterns, reused scripts, assembled modules, stitching",
+      "leadership_claims": "draw architecture",
+      "team_experience": "unknown",
+      "skills and other keywords": [
+        "architecture",
+        "demo",
+        "patterns",
+        "scripts",
+        "modules",
+        "design",
+        "stitching"
+      ]
+    },
+    "deception_patterns": [
+      {
+        "lie_type": "Misrepresentation",
+        "contradictory_claims": [
+          "I usually say I draw the architecture",
+          "I mostly copied patterns, reused scripts, and assembled other people's modules"
+        ]
+      }
+    ]
+  }
+]
