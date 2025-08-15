@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dial Sheild</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #0f1520;
+      --panel-2: #0d131c;
+      --text: #d6e1f5;
+      --muted: #9bb0c9;
+      --primary: #4cc38a;
+      --primary-2: #2f7a5c;
+      --border: #243043;
+      --chip: #192233;
+      --danger: #ff6b6b;
+      --accent: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #4cc38a 100%);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; background: radial-gradient(1200px 600px at 80% -100px, #1b2435 0%, rgba(27,36,53,0) 70%), var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    a { color: inherit; }
+
+    .header {
+      padding: 32px 20px 16px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(37,52,78,0.35) 0%, rgba(20,27,41,0) 80%);
+      border-bottom: 1px solid var(--border);
+    }
+    .title { font-size: 28px; font-weight: 800; letter-spacing: 0.5px; margin: 0; background: var(--accent); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle { margin-top: 8px; color: var(--muted); font-size: 14px; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+
+    .card { background: linear-gradient(180deg, rgba(32,43,63,0.45) 0%, rgba(18,24,35,0.65) 100%); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; }
+    .card h2 { margin: 0; padding: 16px 18px; font-size: 16px; letter-spacing: 0.3px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0)); }
+    .card-body { padding: 18px; }
+
+    .drop {
+      border: 2px dashed #2a3a57;
+      background: linear-gradient(180deg, rgba(45,60,90,0.25), rgba(20,28,44,0.25));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      gap: 8px; padding: 26px; text-align: center; color: var(--muted);
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .drop.dragover { border-color: #7da6ff; background: linear-gradient(180deg, rgba(69,90,134,0.35), rgba(20,28,44,0.35)); }
+    .drop input[type="file"] { display: none; }
+    .drop .hint { font-size: 13px; }
+    .drop .btn-secondary { margin-top: 6px; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .chip { background: var(--chip); border: 1px solid var(--border); color: var(--text); padding: 8px 10px; border-radius: 999px; font-size: 12px; display: inline-flex; align-items: center; gap: 8px; }
+    .chip .size { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; flex-wrap: wrap; }
+
+    .checkbox { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); }
+    .checkbox input { accent-color: #4cc38a; width: 18px; height: 18px; }
+
+    .actions { display: flex; align-items: center; gap: 10px; }
+
+    .btn { border: none; padding: 12px 16px; border-radius: 12px; font-weight: 700; letter-spacing: 0.3px; cursor: pointer; transition: transform .04s ease, filter .2s ease, opacity .2s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn[disabled] { opacity: .6; cursor: not-allowed; }
+    .btn-primary { background: linear-gradient(180deg, #43c085, #2da66f); color: #0b121a; border: 1px solid #2a8c63; box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 6px 16px rgba(65, 195, 135, 0.25); }
+    .btn-secondary { background: #1a2436; color: var(--text); border: 1px solid var(--border); }
+
+    .btn .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.35); border-top-color: white; border-radius: 50%; margin-right: 8px; animation: spin 0.9s linear infinite; vertical-align: -3px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .status { color: var(--muted); font-size: 13px; min-height: 20px; margin-top: 10px; }
+
+    .result-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .result { margin-top: 12px; background: #0b0f14; border: 1px solid var(--border); border-radius: 12px; padding: 14px; max-height: 520px; overflow: auto; font-size: 13px; line-height: 1.5; }
+
+    .footer { text-align: center; color: var(--muted); padding: 18px 12px 40px; font-size: 12px; border-top: 1px solid var(--border); margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">CyberSakshya Dialshield</h1>
+    <div class="subtitle">Upload session audio or text files, analyze for revealed truth and deception patterns.</div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <article class="card">
+        <h2>Upload Sessions</h2>
+        <div class="card-body">
+          <label class="drop" id="dropArea">
+            <div>
+              <strong>Drag & drop</strong> audio/text files here
+            </div>
+            <div class="hint">or</div>
+            <button type="button" class="btn btn-secondary" id="browseBtn">Browse files</button>
+            <input id="files" name="files" type="file" accept=".mp3,.wav,.m4a,.flac,.ogg,.txt" multiple />
+          </label>
+
+          <div id="chips" class="chips" aria-live="polite"></div>
+
+          <div class="row">
+            <label class="checkbox">
+              <input type="checkbox" id="saveOutputs" />
+              Save transcript and truth.json to transcribed.txt & PrelimsSubmission.json
+            </label>
+
+            <div class="actions">
+              <button id="analyzeBtn" class="btn btn-primary" disabled>
+                <span id="btnSpinner" class="spinner" style="display:none"></span>
+                Analyze
+              </button>
+            </div>
+          </div>
+
+          <div id="status" class="status"></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>Result</h2>
+        <div class="card-body">
+          <div class="result-toolbar">
+            <div style="color: var(--muted); font-size: 12px;">JSON output</div>
+            <button id="copyBtn" class="btn btn-secondary">Copy</button>
+          </div>
+          <pre id="result" class="result" spellcheck="false"></pre>
+        </div>
+      </article>
+    </section>
+
+    <footer class="footer">Running locally — open with http://127.0.0.1:8000</footer>
+  </main>
+
+  <script>
+    // Elements
+    const filesInput = document.getElementById('files');
+    const dropArea = document.getElementById('dropArea');
+    const browseBtn = document.getElementById('browseBtn');
+    const chips = document.getElementById('chips');
+    const saveOutputs = document.getElementById('saveOutputs');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const btnSpinner = document.getElementById('btnSpinner');
+    const statusEl = document.getElementById('status');
+    const resultEl = document.getElementById('result');
+    const copyBtn = document.getElementById('copyBtn');
+
+    // Utils
+    const fmtSize = bytes => {
+      if (bytes < 1024) return bytes + ' B';
+      const kb = bytes / 1024; if (kb < 1024) return kb.toFixed(1) + ' KB';
+      const mb = kb / 1024; if (mb < 1024) return mb.toFixed(1) + ' MB';
+      const gb = mb / 1024; return gb.toFixed(2) + ' GB';
+    };
+
+    const deriveSubjectId = files => {
+      if (!files || files.length === 0) return 'subject';
+      const first = files[0];
+      const name = first.name || 'subject';
+      let base = name.replace(/\.[^/.]+$/, '');
+      base = base.trim().replace(/[^a-zA-Z0-9_-]+/g, '_').toLowerCase();
+      return base || 'subject';
+    };
+
+    function refreshChips() {
+      chips.innerHTML = '';
+      const files = Array.from(filesInput.files || []);
+      if (files.length === 0) {
+        analyzeBtn.disabled = true;
+        return;
+      }
+      for (const f of files) {
+        const chip = document.createElement('div');
+        chip.className = 'chip';
+        chip.innerHTML = `${f.name} <span class="size">(${fmtSize(f.size)})`;
+        chips.appendChild(chip);
+      }
+      analyzeBtn.disabled = false;
+    }
+
+    function setAnalyzing(on) {
+      if (on) {
+        analyzeBtn.disabled = true;
+        btnSpinner.style.display = 'inline-block';
+      } else {
+        btnSpinner.style.display = 'none';
+        analyzeBtn.disabled = (filesInput.files.length === 0);
+      }
+    }
+
+    // Drag & drop
+    ;['dragenter','dragover'].forEach(evt => {
+      dropArea.addEventListener(evt, e => { e.preventDefault(); e.stopPropagation(); dropArea.classList.add('dragover'); });
+    });
+    ;['dragleave','drop'].forEach(evt => {
+      dropArea.addEventListener(evt, e => { e.preventDefault(); e.stopPropagation(); dropArea.classList.remove('dragover'); });
+    });
+    dropArea.addEventListener('drop', e => {
+      const dt = e.dataTransfer;
+      if (!dt || !dt.files || dt.files.length === 0) return;
+      const incoming = Array.from(dt.files);
+      const current = Array.from(filesInput.files || []);
+      const combined = new DataTransfer();
+      [...current, ...incoming].forEach(f => combined.items.add(f));
+      filesInput.files = combined.files;
+      refreshChips();
+    });
+
+    // Browse button
+    browseBtn.addEventListener('click', () => filesInput.click());
+
+    // File input change
+    filesInput.addEventListener('change', refreshChips);
+
+    // Analyze click
+    analyzeBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const files = Array.from(filesInput.files || []);
+      if (files.length === 0) {
+        alert('Please select at least one audio/text file');
+        return;
+      }
+
+      setAnalyzing(true);
+      statusEl.textContent = 'Analyzing... this may take a while for long audio.';
+      resultEl.textContent = '';
+
+      const formData = new FormData();
+      formData.append('subject_id', deriveSubjectId(files));
+      formData.append('save_outputs', String(saveOutputs.checked));
+      for (const file of files) formData.append('files', file, file.name);
+
+      try {
+        const res = await fetch('/api/analyze', { method: 'POST', body: formData });
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`HTTP ${res.status}: ${text}`);
+        }
+        const json = await res.json();
+        resultEl.textContent = JSON.stringify(json, null, 2);
+        statusEl.textContent = 'Done.';
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = 'Error: ' + err.message;
+      } finally {
+        setAnalyzing(false);
+      }
+    });
+
+    // Copy button
+    copyBtn.addEventListener('click', async () => {
+      const txt = resultEl.textContent || '';
+      try {
+        await navigator.clipboard.writeText(txt);
+        copyBtn.textContent = 'Copied';
+      } catch (_) {
+        copyBtn.textContent = 'Copy failed';
+      } finally {
+        setTimeout(() => (copyBtn.textContent = 'Copy'), 1200);
+      }
+    });
+
+    // Init
+    refreshChips();
+  </script>
+</body>
+</html>
