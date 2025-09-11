@@ -47,3 +47,4 @@ async function analyze(event) {
 }
 
 document.getElementById('analyze-form').addEventListener('submit', analyze);
+
