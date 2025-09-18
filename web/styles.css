@@ -10,3 +10,4 @@ button:hover { background: #2ea043; }
 .row { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
 .status { margin-top: 16px; min-height: 20px; color: #8b949e; }
 .result { background: #0b0f14; padding: 16px; border: 1px solid #30363d; border-radius: 8px; white-space: pre-wrap; word-break: break-word; }
+
