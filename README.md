@@ -181,4 +181,3 @@ When **Save** is checked (or `save_outputs=true` in API):
 ## License
 
 This project may process audio/text that you supply. Ensure you have the right to process that content.
-
