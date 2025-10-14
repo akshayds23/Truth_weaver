@@ -40,4 +40,3 @@ selene_2024_2.mp3: let s talk modeling whether it s a classification or regressi
 selene_2024_3.mp3: how would i handle class imbalance that s a classic you d use over sampling techniques like smoke or you could use a different evaluation metric it s a standard problem with a standard solution
 selene_2024_4.mp3: could i code a solution for that now well no not off the top of my head i typically work with a data scientist who handles that part my role is more about the big picture and the rails integration
 selene_2024_5.mp3: oh god he s asking more data questions i only took a weekend workshop on this stuff i don t know any of it just ask me about rails please just ask me about rails
-
